@@ -1,0 +1,31 @@
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.typing:nth-child(1) {
+  animation: typing 3s infinite linear;
+}
+.typing:nth-child(2) {
+  animation: typing 3s infinite linear 0.2s;
+}
+
+.typing:nth-child(3) {
+  animation: typing 3s infinite linear 0.2s;
+}
+
+@keyframes typing {
+  0%,
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateY(-7px);
+  }
+}
