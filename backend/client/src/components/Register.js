@@ -56,7 +56,7 @@ export default function Register({ setActive }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post("/api/v1/user/register", {
+      const { data } = await axios.post("https://talktrove.vercel.app/api/v1/user/register", {
         name,
         email,
         password,
