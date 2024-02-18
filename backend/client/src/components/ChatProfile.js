@@ -27,7 +27,7 @@ export default function ChatProfile({ setIsShow }) {
       return toast.error("User Id & Chat Id is required!");
     }
     try {
-      const { data } = await axios.put(`/api/v1/chat/remove-user`, {
+      const { data } = await axios.put(`https://talktrove.vercel.app/api/v1/chat/remove-user`, {
         userId,
         chatId,
       });
@@ -47,7 +47,7 @@ export default function ChatProfile({ setIsShow }) {
     }
     setloading(true);
     try {
-      await axios.put("/api/v1/chat/add-user", {
+      await axios.put("https://talktrove.vercel.app/api/v1/chat/add-user", {
         userId: selectedUsers[0]._id,
         chatId: selectedChat._id,
       });
@@ -70,7 +70,7 @@ export default function ChatProfile({ setIsShow }) {
       toast.error(" Group name & Chat id is required!");
     }
     try {
-      const { data } = await axios.put(`/api/v1/chat/update-group`, {
+      const { data } = await axios.put(`https://talktrove.vercel.app/api/v1/chat/update-group`, {
         chatName: chatName,
         chatId: selectedChat._id,
       });
@@ -94,7 +94,7 @@ export default function ChatProfile({ setIsShow }) {
     }
     try {
       const { data } = await axios.get(
-        `/api/v1/user/searchUser?search=${search}`
+        `https://talktrove.vercel.app/api/v1/user/searchUser?search=${search}`
       );
       setSearchResults(data.users);
     } catch (error) {
@@ -123,7 +123,7 @@ export default function ChatProfile({ setIsShow }) {
       return toast.error("User Id & Chat id is required!");
     }
     try {
-      const { data } = await axios.put(`/api/v1/chat/remove-user`, {
+      const { data } = await axios.put(`https://talktrove.vercel.app/api/v1/chat/remove-user`, {
         userId: userId,
         chatId: chatId,
       });
