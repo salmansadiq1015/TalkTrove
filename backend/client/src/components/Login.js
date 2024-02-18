@@ -18,7 +18,7 @@ export default function Login() {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data } = await axios.post("/api/v1/user/login", {
+      const { data } = await axios.post("https://talktrove.vercel.app/api/v1/user/login", {
         email,
         password,
       });
