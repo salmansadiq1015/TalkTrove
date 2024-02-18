@@ -22,7 +22,7 @@ export default function SearchUser() {
 
     try {
       const { data } = await axios.get(
-        `/api/v1/user/searchUser?search=${search}`
+        `https://talktrove.vercel.app/api/v1/user/searchUser?search=${search}`
       );
 
       setUsers(data.users);
@@ -41,7 +41,7 @@ export default function SearchUser() {
   const accessChat = async (userId) => {
     setChatLoad(true);
     try {
-      const { data } = await axios.post(`/api/v1/chat/create-chat`, {
+      const { data } = await axios.post(`https://talktrove.vercel.app/api/v1/chat/create-chat`, {
         userId: userId,
       });
 
