@@ -37,7 +37,7 @@ export default function ChatUsers({ setSelected }) {
   const getChats = async () => {
     setChatLoad(true);
     try {
-      const { data } = await axios.get(`/api/v1/chat/getChats/${userId}`);
+      const { data } = await axios.get(`https://talktrove.vercel.app/api/v1/chat/getChats/${userId}`);
       console.log("data:", data);
 
       setChats(data);
