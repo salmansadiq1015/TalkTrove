@@ -63,7 +63,7 @@ export default function CustomModel({ setShowGroup }) {
     }
     try {
       const { data } = await axios.get(
-        `/api/v1/user/searchUser?search=${search}`
+        `https://talktrove.vercel.app/api/v1/user/searchUser?search=${search}`
       );
       setSearchResults(data.users);
     } catch (error) {
@@ -88,7 +88,7 @@ export default function CustomModel({ setShowGroup }) {
       return toast.error("Please fill all the fields!");
     }
     try {
-      const { data } = await axios.post("/api/v1/chat/GroupChat", {
+      const { data } = await axios.post("https://talktrove.vercel.app/api/v1/chat/GroupChat", {
         name,
         users: JSON.stringify(selectedUsers.map((user) => user._id)),
         avatar,
