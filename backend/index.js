@@ -8,7 +8,7 @@ import userRoute from "./routes/userRoutes.js";
 import chatRoute from "./routes/chatRoute.js";
 import messageRoute from "./routes/messageRoute.js";
 import { Server } from "socket.io";
-import path from "path";
+// import path from "path";
 
 // Dotenv Config
 dotenv.config();
@@ -25,20 +25,20 @@ app.use("/api/v1/user", userRoute);
 app.use("/api/v1/chat", chatRoute);
 app.use("/api/v1/messages", messageRoute);
 
-// ----------------------Deployment--------------->
+// // ----------------------Deployment--------------->
 
-const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname1, "/client/build")));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"));
-  });
-} else {
-  app.get("/"),
-    (req, res) => {
-      res.send("API is running successfully!");
-    };
-}
+// const __dirname1 = path.resolve();
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname1, "/client/build")));
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"));
+//   });
+// } else {
+//   app.get("/"),
+//     (req, res) => {
+//       res.send("API is running successfully!");
+//     };
+// }
 
 // ----------------------Deployment--------------->
 
