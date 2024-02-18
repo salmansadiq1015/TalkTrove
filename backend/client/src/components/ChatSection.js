@@ -37,7 +37,7 @@ export default function ChatSection() {
     setLoading(true);
     try {
       const { data } = await axios.get(
-        `/api/v1/messages/get-messages/${selectedChat._id}`
+        `https://talktrove.vercel.app/api/v1/messages/get-messages/${selectedChat._id}`
       );
       if (data) {
         setMessages(data?.messages);
@@ -78,7 +78,7 @@ export default function ChatSection() {
     e.preventDefault();
     socket.emit("stop typing", selectedChat._id);
     try {
-      const { data } = await axios.post(`/api/v1/messages/create-messages`, {
+      const { data } = await axios.post(`https://talktrove.vercel.app/api/v1/messages/create-messages`, {
         content: newMessage,
         chatId: selectedChat._id,
       });
