@@ -7,7 +7,7 @@ import "./style.css";
 import io from "socket.io-client";
 import TypingIndicator from "./TypingIndicator";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://talktrove.vercel.app";
 var socket, selectedChatCompare;
 
 export default function ChatSection() {
