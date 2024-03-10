@@ -24,7 +24,10 @@ export default function ChatSection() {
   useEffect(() => {
     socket = io(ENDPOINT);
     socket.emit("setup", auth?.user);
-    socket.on("connected", () => setSocketConnected(true));
+      socket.on("connected", () => {
+      setSocketConnected(true);
+      console.log("WebSocket connection established!");
+    });
 
     socket.on("typing", (data) => setIsTyping(true));
     socket.on("stop typing", (data) => setIsTyping(false));
