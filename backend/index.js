@@ -98,7 +98,7 @@ io.on("connection", (socket) => {
   });
 
   // Turn off Socket
-  socket.off("setup", () => {
+  socket.on("setup", () => {
     console.log("User Disconnected!");
     socket.leave(userData.id);
   });
